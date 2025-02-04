@@ -19,11 +19,11 @@ const Categories = () => {
       } catch (error) {
         console.error(error);
       }
-      //call the method
-      getAndSetCategories();
-      return () => {
-        ignore = true;
-      };
+    };
+    //call the method
+    getAndSetCategories();
+    return () => {
+      ignore = true;
     };
   }, []); //empty parameter run only once
 
@@ -31,10 +31,15 @@ const Categories = () => {
     <>
       {
         <div>
-          <h1>Fetch inside useEffect</h1>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "1rem",
+            }}
+          >
             {categories.map((item) => (
-              <CategoriesItem key={self.crypto.randomUUID()} {...item} />
+              <CategoriesItem key={self.crypto.randomUUID()} item={item} />
             ))}
           </div>
         </div>

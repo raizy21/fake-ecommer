@@ -1,17 +1,16 @@
-// fetch pokemon
+// fetch categories products
 const getProductsCategories = async () => {
   //fetch()
   const res = await fetch(`https://fakestoreapi.com/products/categories`);
 
   //res.json()
   const data = await res.json();
-  const categories = data.results;
+  // const categories = data.results;
 
-  return categories;
+  return data;
 };
 
 export { getProductsCategories };
-
 // /**
 //  * Service class for handling Products requests
 //  */

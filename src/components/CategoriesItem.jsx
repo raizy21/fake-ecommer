@@ -2,7 +2,7 @@
 const CategoriesItem = ({ item }) => {
   return (
     <div>
-      <h2>{item}</h2>
+      <h2 className="text-xl text-amber-300 ml-15">{item}</h2>
     </div>
   );
 };
