@@ -8,4 +8,26 @@ const getProducts = async () => {
     return data;
 };
 
-export { getProducts };
+const getCategories = async () => {
+    const res = await fetch('https://fakestoreapi.com/products/categories');
+    if (!res.ok) throw new Error(`${res.status}. Something went wrong!`);
+
+    const data = await res.json();
+    // console.log(data);
+
+    return data;
+};
+
+const getProductsByCat = async (category) => {
+    const res = await fetch(
+        `https://fakestoreapi.com/products/category/${category}`
+    );
+    if (!res.ok) throw new Error(`${res.status}. Something went wrong!`);
+
+    const data = await res.json();
+    // console.log(data);
+
+    return data;
+};
+
+export { getProducts, getCategories, getProductsByCat };
